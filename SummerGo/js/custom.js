@@ -28,10 +28,9 @@ function start(obj){
 				oBowlUL.append("<h3>Powls</h3>");
 				for(var i=0; i<arrBowl.length;i++) {
 					var oBowl = arrBowl[i];
-					var src = oBowl.src;
-					src.replace(new RegExp("\\", 'g'),"//");
-					var alt = oBowl.alt;
-					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
+					oBowl.replace(new RegExp("\\", 'g'),"//");
+					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1, oBowl.length);
+					var sLI='<li><a href="#"><img src="'+oBowl+'" alt="'+alt+'" /></a></li>';
 					oBowlUL.append(sLI);
 				}
 			}
@@ -41,8 +40,8 @@ function start(obj){
 				oBottleUL.append("<h3>Bottles</h3>");
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
-					var src = oBottle.src;
-					var alt = oBottle.alt;
+					var src = oBottle;
+					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1, oBowl.length);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
 					oBottleUL.append(sLI);
 				}
@@ -53,8 +52,8 @@ function start(obj){
 				oBottleUL.append("<h3>Plates</h3>");
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
-					var src = oBottle.src;
-					var alt = oBottle.alt;
+					var src = oBottle;
+					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1, oBowl.length);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
 					oBottleUL.append(sLI);
 				}
@@ -65,8 +64,8 @@ function start(obj){
 				oBottleUL.append("<h3>Cups</h3>");
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
-					var src = oBottle.src;
-					var alt = oBottle.alt;
+					var src = oBottle;
+					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1, oBowl.length);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
 					oBottleUL.append(sLI);
 				}
