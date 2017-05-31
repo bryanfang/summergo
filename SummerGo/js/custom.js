@@ -32,7 +32,7 @@ function start(obj){
 					var score = oBowl.score;
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = src.substr(src.lastIndexOf("\\")+1);
-					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="title">'+score+'</span></li>';
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span></li>';
 					oBowlUL.append(sLI);
 				}
 			}
@@ -42,10 +42,11 @@ function start(obj){
 				oBottleUL.append("<h3>Bottles</h3>");
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
+					var src = oBottle.file_name;
 					var score = oBottle.score;
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = src.substr(src.lastIndexOf("//")+1);
-					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="title">'+score+'</span</li>';
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span></li>';
 					oBottleUL.append(sLI);
 				}
 			}
@@ -59,7 +60,7 @@ function start(obj){
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = src.substr(src.lastIndexOf("//")+1);
 					var score = oBottle.score;
-					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="title">'+score+'</span</li>';
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span</li>';
 					oBottleUL.append(sLI);
 				}
 			}
@@ -73,7 +74,7 @@ function start(obj){
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = src.substr(src.lastIndexOf("//")+1);
 					var score = oBottle.score;
-					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="title">'+score+'</span</li>';
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span</li>';
 					oBottleUL.append(sLI);
 				}
 			}

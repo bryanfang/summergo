@@ -457,7 +457,7 @@
             self._initZoom();
         },
         _initTemplateDefaults: function () {
-            var self = this, tMain1, tMain2, tPreview, tFileIcon, tClose, tCaption, tBtnDefault, tBtnLink, tBtnBrowse,
+            var self = this, tMain1, tMain2, tPreview, tFileIcon, /*tClose,*/ tCaption, tBtnDefault, tBtnLink, tBtnBrowse,
                 tModalMain, tModal, tProgress, /*tSize,*/ tFooter, tActions, tActionDelete, tActionUpload, tActionZoom,
                 tActionDrag, tIndicator, tTagBef, tTagBef1, tTagBef2, tTagAft, tGeneric, tHtml, tImage, tText, tVideo,
                 tAudio, tFlash, tObject, tPdf, tOther, tZoomCache, vDefaultDim;
@@ -473,8 +473,8 @@
                 '   </div>\n' +
                 '</div>';
             tMain2 = '{preview}\n<div class="kv-upload-progress hide"></div>\n{remove}\n{cancel}\n{upload}\n{browse}\n';
-            tPreview = '<div class="file-preview {class}">\n' +
-                '    {close}' +
+            tPreview = '<div class="file-preview {class}">\n' /*+
+                '    {close}'*/ +
                 '    <div class="{dropClass}">\n' +
                 '    <div class="file-preview-thumbnails">\n' +
                 '    </div>\n' +
@@ -483,7 +483,7 @@
                 '    <div class="kv-fileinput-error"></div>\n' +
                 '    </div>\n' +
                 '</div>';
-            tClose = '<div class="close fileinput-remove">&times;</div>\n';
+            /*tClose = '<div class="close fileinput-remove">&times;</div>\n';*/
             tFileIcon = '<i class="glyphicon glyphicon-file kv-caption-icon"></i>';
             tCaption = '<div tabindex="500" class="form-control file-caption {class}">\n' +
                 '   <div class="file-caption-name"></div>\n' +
@@ -516,9 +516,9 @@
                 '     </div>\n' +
                 '</div>';
             /*tSize = ' <samp>({sizeText})</samp>';*/
-            tFooter = '<div class="file-thumbnail-footer">\n' +
+            tFooter = '<div class="file-thumbnail-footer">\n'/* +
                 '    <div class="file-footer-caption" title="{caption}">{caption}</div>\n' +
-                '    {progress} {indicator} {actions}\n' +
+                '    {progress} {indicator} {actions}\n' +*/
                 '</div>';
             tActions = '{drag}\n' +
                 '<div class="file-actions">\n' +
@@ -569,7 +569,7 @@
                     main1: tMain1,
                     main2: tMain2,
                     preview: tPreview,
-                    close: tClose,
+                    /*close: tClose,*/
                     fileIcon: tFileIcon,
                     caption: tCaption,
                     modalMain: tModalMain,
