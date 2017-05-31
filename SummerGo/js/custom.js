@@ -19,10 +19,7 @@ function start(obj){
 	};
 	
 	$.ajax({
-		type:"POST",
 		url:"http://127.0.0.1:8000/demo/",
-		data: srcFileJson,
-		dataType: "application/json",
 		success: function(data){
 			var result = data.result;
 			if(result.bowls){
