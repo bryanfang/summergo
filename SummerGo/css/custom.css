@@ -28,3 +28,7 @@ body{
 	height: 40px!important;
 }
 
+.score{
+	font-weight: bold;
+	font: green;
+}

@@ -28,9 +28,11 @@ function start(obj){
 				oBowlUL.append("<h3>Powls</h3>");
 				for(var i=0; i<arrBowl.length;i++) {
 					var oBowl = arrBowl[i];
+					var src = oBowl.file_name;
+					var score = oBowl.score;
 					oBowl.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = oBowl.substr(oBowl.lastIndexOf("\\")+1);
-					var sLI='<li><a href="#"><img src="'+oBowl+'" alt="'+alt+'" /></a></li>';
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span></li>';
 					oBowlUL.append(sLI);
 				}
 			}
@@ -40,10 +42,10 @@ function start(obj){
 				oBottleUL.append("<h3>Bottles</h3>");
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
-					var src = oBottle;
+					var score = oBottle.score;
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1);
-					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span</li>';
 					oBottleUL.append(sLI);
 				}
 			}
@@ -53,10 +55,11 @@ function start(obj){
 				oBottleUL.append("<h3>Plates</h3>");
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
-					var src = oBottle;
+					var src = oBottle.file_name;
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1);
-					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
+					var score = oBottle.score;
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span</li>';
 					oBottleUL.append(sLI);
 				}
 			}
@@ -66,10 +69,11 @@ function start(obj){
 				oBottleUL.append("<h3>Cups</h3>");
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
-					var src = oBottle;
+					var src = oBottle.file_name;
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1);
-					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
+					var score = oBottle.score;
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span</li>';
 					oBottleUL.append(sLI);
 				}
 			}
