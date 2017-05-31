@@ -25,7 +25,7 @@ function start(obj){
 			if(result.bowls){
 				var arrBowl = result.bowls;
 				var oBowlUL= $("#bowls>ul");
-				oBowlUL.append("<h3>Powls</h3>");
+				oBowlUL.append("<h3>Bowls</h3>");
 				for(var i=0; i<arrBowl.length;i++) {
 					var oBowl = arrBowl[i];
 					var src = oBowl.file_name;
