@@ -29,7 +29,7 @@ function start(obj){
 				for(var i=0; i<arrBowl.length;i++) {
 					var oBowl = arrBowl[i];
 					var src = oBowl.src;
-					src.replace("\\","//");
+					src.replace(new RegExp("\\", 'g'),"//");
 					var alt = oBowl.alt;
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
 					oBowlUL.append(sLI);
