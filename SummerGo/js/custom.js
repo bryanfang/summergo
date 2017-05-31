@@ -31,7 +31,7 @@ function start(obj){
 					var src = oBowl.file_name;
 					var score = oBowl.score;
 					src.replace(new RegExp("/\\/", 'g'),"//");
-					var alt = oBowl.substr(src.lastIndexOf("\\")+1);
+					var alt = src.substr(src.lastIndexOf("\\")+1);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span></li>';
 					oBowlUL.append(sLI);
 				}
