@@ -30,6 +30,8 @@ function start(obj){
 					var oBowl = arrBowl[i];
 					var src = oBowl.file_name;
 					var score = oBowl.score;
+					score = score*100;
+					score = score.toFixed(2);
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = src.substr(src.lastIndexOf("\\")+1);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span></li>';
@@ -44,6 +46,8 @@ function start(obj){
 					var oBottle = arrBottle[j];
 					var src = oBottle.file_name;
 					var score = oBottle.score;
+					score = score*100;
+					score = score.toFixed(2);
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = src.substr(src.lastIndexOf("//")+1);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span></li>';
@@ -60,6 +64,8 @@ function start(obj){
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = src.substr(src.lastIndexOf("//")+1);
 					var score = oBottle.score;
+					score = score*100;
+					score = score.toFixed(2);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span</li>';
 					oBottleUL.append(sLI);
 				}
@@ -74,6 +80,8 @@ function start(obj){
 					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = src.substr(src.lastIndexOf("//")+1);
 					var score = oBottle.score;
+					score = score*100;
+					score = score.toFixed(2);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span</li>';
 					oBottleUL.append(sLI);
 				}
