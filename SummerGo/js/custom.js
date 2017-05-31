@@ -9,73 +9,75 @@ $(document).ready(function(){
 });
 function start(obj){
 	var arrFiles = $("#inputfile")[0].files;
-	var fileBase = "C:/";
+	var fileBase = "C://demo_images//";
+	var files = [];
+	for(var i=0;i<arrFiles.length;i++){
+		files.push(fileBase + arrFiles[i]);
+	}
 	var srcFileJson = {
-		"files": [
-		]
+		"files": files
 	};
-	srcFileJson.files.push(arrFiles);
+	
 	$.ajax({
 		type:"POST",
 		url:"http://127.0.0.1:8000/demo/",
 		data: srcFileJson,
-		dataType: "application/json"
+		dataType: "application/json",
+		success: function(data){
+			var result = data.result;
+			if(result.bowls){
+				var arrBowl = result.bowls;
+				var oBowlUL= $("#bowls>ul");
+				oBowlUL.append("<h3>Powls</h3>");
+				for(var i=0; i<arrBowl.length;i++) {
+					var oBowl = arrBowl[i];
+					var src = oBowl.src;
+					var alt = oBowl.alt;
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
+					oBowlUL.append(sLI);
+				}
+			}
+			if(result.bottles){
+				var arrBottle = result.bottles;
+				var oBottleUL = $("#bottles>ul");
+				oBottleUL.append("<h3>Bottles</h3>");
+				for(var j=0;j<arrBottle.length;j++) {
+					var oBottle = arrBottle[j];
+					var src = oBottle.src;
+					var alt = oBottle.alt;
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
+					oBottleUL.append(sLI);
+				}
+			}
+			if(result.plates){
+				var arrBottle = result.plates;
+				var oBottleUL = $("#plates>ul");
+				oBottleUL.append("<h3>Plates</h3>");
+				for(var j=0;j<arrBottle.length;j++) {
+					var oBottle = arrBottle[j];
+					var src = oBottle.src;
+					var alt = oBottle.alt;
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
+					oBottleUL.append(sLI);
+				}
+			}
+			if(result.cups){
+				var arrBottle = result.cups;
+				var oBottleUL = $("#cups>ul");
+				oBottleUL.append("<h3>Cups</h3>");
+				for(var j=0;j<arrBottle.length;j++) {
+					var oBottle = arrBottle[j];
+					var src = oBottle.src;
+					var alt = oBottle.alt;
+					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
+					oBottleUL.append(sLI);
+				}
+			}
+		}
 	});
 	//Display progress bar
 	$("#process-bar").toggle();
 	initProgress();
-	
-	//pictures classifiered by tensorflow, which is returned as JSON format, then visit and add each picture to page as group
-	var oJsonPic = {
-		"bowl":[
-			{
-				"src": "robots.jpg",
-				"alt": "Robots like cameras"
-			},
-			{
-				"src": "monster.jpg",
-				"alt": "Monsters!"
-			},
-			{
-				"src": "C://Users//i312473//Desktop//workfiles//Velocity//D1-activities//IMG_9380.JPG",
-				"alt": "Local Test"
-			}
-		],
-		"bottle":[
-			{
-				"src": "santa.jpg",
-				"alt": "Santa down under"
-			},
-			{   
-				"src": "thumb6.jpg",
-				"alt": "Sponguebob!"
-			}
-		]
-	};
-	if(oJsonPic.bowl){
-		var arrBowl = oJsonPic.bowl;
-		var oBowlUL= $("#bowl>ul");
-		oBowlUL.append("<h3>Powl</h3>");
-		for(var i=0; i<arrBowl.length;i++) {
-			var oBowl = arrBowl[i];
-			var src = oBowl.src;
-			var alt = oBowl.alt;
-			var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
-			oBowlUL.append(sLI);
-		}
-	}
-	if(oJsonPic.bottle){
-		var arrBottle = oJsonPic.bottle;
-		var oBottleUL = $("#bottle>ul");
-		oBottleUL.append("<h3>Bottle</h3>");
-		for(var j=0;j<arrBottle.length;j++) {
-			var oBottle = arrBottle[j];
-			var src = oBottle.src;
-			var alt = oBottle.alt;
-			var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
-			oBottleUL.append(sLI);
-		}
-	}
 	
 	//Add classifier moving animate
 	$(document).ready(function(){
