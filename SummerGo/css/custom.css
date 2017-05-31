@@ -30,6 +30,7 @@ body{
 
 .score{
 	position: relative;
+	top: 70px;
 	font-weight: bold;
 	color: green;
 }
