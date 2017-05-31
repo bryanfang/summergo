@@ -30,7 +30,7 @@ function start(obj){
 					var oBowl = arrBowl[i];
 					var src = oBowl.file_name;
 					var score = oBowl.score;
-					oBowl.replace(new RegExp("/\\/", 'g'),"//");
+					src.replace(new RegExp("/\\/", 'g'),"//");
 					var alt = oBowl.substr(oBowl.lastIndexOf("\\")+1);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a><br><span class="score">'+score+'</span></li>';
 					oBowlUL.append(sLI);
