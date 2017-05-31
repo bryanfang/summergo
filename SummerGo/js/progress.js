@@ -78,7 +78,7 @@ function initProgress() {
           $('#main_content').slideDown();
           $('#fork_me').fadeIn();
         });
-      }, 2000);
+      }, 500);
     });
   });
 }

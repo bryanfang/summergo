@@ -28,8 +28,8 @@ function start(obj){
 				oBowlUL.append("<h3>Powls</h3>");
 				for(var i=0; i<arrBowl.length;i++) {
 					var oBowl = arrBowl[i];
-					oBowl.replace(new RegExp("\\", 'g'),"//");
-					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1, oBowl.length);
+					oBowl.replace(new RegExp("/\\/", 'g'),"//");
+					var alt = oBowl.substr(oBowl.lastIndexOf("\\")+1);
 					var sLI='<li><a href="#"><img src="'+oBowl+'" alt="'+alt+'" /></a></li>';
 					oBowlUL.append(sLI);
 				}
@@ -41,7 +41,8 @@ function start(obj){
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
 					var src = oBottle;
-					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1, oBowl.length);
+					src.replace(new RegExp("/\\/", 'g'),"//");
+					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
 					oBottleUL.append(sLI);
 				}
@@ -53,7 +54,8 @@ function start(obj){
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
 					var src = oBottle;
-					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1, oBowl.length);
+					src.replace(new RegExp("/\\/", 'g'),"//");
+					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
 					oBottleUL.append(sLI);
 				}
@@ -65,18 +67,21 @@ function start(obj){
 				for(var j=0;j<arrBottle.length;j++) {
 					var oBottle = arrBottle[j];
 					var src = oBottle;
-					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1, oBowl.length);
+					src.replace(new RegExp("/\\/", 'g'),"//");
+					var alt = oBowl.substr(oBowl.lastIndexOf("//")+1);
 					var sLI='<li><a href="#"><img src="'+src+'" alt="'+alt+'" /></a></li>';
 					oBottleUL.append(sLI);
 				}
 			}
-			//Add classifier moving animate
-			$(document).ready(function(){
-				$('ul.thumb li').Zoomer({speedView:200,speedRemove:400,altAnim:true,speedTitle:400,debug:false});
-			});
+			
 		}
 	});
 	//Display progress bar
 	$("#process-bar").toggle();
 	initProgress();
+	
+	//Add classifier moving animate
+	$(document).ready(function(){
+		$('ul.thumb li').Zoomer({speedView:200,speedRemove:400,altAnim:true,speedTitle:400,debug:false});
+	});
 }
